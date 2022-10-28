@@ -1,0 +1,43 @@
+{
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"name": "rozmowa kwalifikacyjna python C",
+	
+	"runArgs": [
+		"--privileged",
+		"--name", "rozmowa_kwalifikacyjna_python_C"
+	],
+	"remoteUser": "vscode",
+	"updateRemoteUserUID": true,
+	"settings": {
+		"github.gitAuthentication": true,
+		"git.terminalAuthentication": true,
+		"C_Cpp.intelliSenseEngine": "Disabled",
+		"nrf-connect.toolchain.path": "PATH",
+		"nrf-connect.welcome.showOnStartup": false
+	},
+	"containerEnv": {
+		"LC_ALL": "C.UTF-8"
+	},
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/work,type=bind",
+	"workspaceFolder": "/home/vscode/work",
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"eamodio.gitlens",
+				"llvm-vs-code-extensions.vscode-clangd",
+				"ms-vscode.cpptools",
+				"mhutchie.git-graph",
+				"twxs.cmake",
+				"ms-vscode.live-server",
+				"MS-vsliveshare.vsliveshare-pack"
+			]
+		}
+	},
+	"features": {
+		"git": "latest"
+	}
+}
